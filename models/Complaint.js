@@ -18,7 +18,6 @@ var schema = new mongoose.Schema({
         type : String
     },
     gender : String,
-    status : String,
     post : {
         type : String
     },

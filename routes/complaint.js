@@ -20,7 +20,7 @@ route.post('/api/complaints', async (req,res)=>{
 route.put('/api/complaints/:id',async (req,res)=>{
     try{
         const complaint = await Complaint.findById(req.params.id);
-        if(complaint.name === req.body.name){
+        if(complaint.email === req.body.email){
             try{
                     const updatedComplaint = await Complaint.findByIdAndUpdate(
                         req.params.id,
@@ -44,7 +44,7 @@ route.put('/api/complaints/:id',async (req,res)=>{
 route.delete('/api/complaints/:id',async (req,res)=>{
     try{
         const complaint = await Complaint.findById(req.params.id);
-        if(complaint.name === req.body.name){
+        if(1){
             try{
                    await complaint.delete();
                 res.status(200).json("Post Deleted");

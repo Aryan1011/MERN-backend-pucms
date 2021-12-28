@@ -4,6 +4,12 @@ const User = require('../models/User')
 const Complaint = require('../models/Complaint')
 
 
+//Welcome
+route.get('/',(req,res)=>{
+    res.send(`Welcome To The Backend of PUCMS AWAAZ`);
+})
+
+
 // create 
 route.post('/api/complaints', async (req,res)=>{
     const newComplaint = new Complaint(req.body);

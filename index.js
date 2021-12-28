@@ -3,7 +3,7 @@ const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 var cors = require('cors');
-
+const PORT = process.env.PORT || 5000;
 // use it before all route definitions
 app.use(cors({origin: 'http://localhost:3000'}));
 dotenv.config();
@@ -19,5 +19,5 @@ mongoose.connect(process.env.MONGO_URI, {
 // app.use("/api/auth",authRoute)
 app.use("/",require('./routes/complaint'))
 
-app.listen(5000, ()=> { console.log("Backend Running");
+app.listen(PORT, ()=> { console.log("Backend Running");
 });

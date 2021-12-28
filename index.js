@@ -16,6 +16,10 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(console.log("Connected to MongoDB"))
 .catch((err)=>{console.log(err)});
 
+app.get('/',(res,req)=>{
+    res.send("Welcome to the backend of Pu cms");
+})
+
 // app.use("/api/auth",authRoute)
 app.use("/",require('./routes/complaint'))
 
